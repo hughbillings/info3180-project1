@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+            
+            
+{% block main %}
+
+ <h2>Profile Generator</h2>
+ 
+<form method='post'action="{{url_for('profile')}}" enctype="multipart/form-data">
+    <div class = "form-group">
+        {{ form.fname.label }} 
+        <p>Please enter your First name</p>
+        {{ form.fname(class="form-control") }}
+    </div>
+    <div class = "form-group">
+        {{ form.lname.label }} 
+        <p>Please enter your Last name</p>
+        {{ form.lname(class="form-control") }}
+    </div>
+    <div class = "form-group">
+        {{ form.gender.label }} 
+        <p>Select Gender</p>
+        {{ form.gender(class="form-control") }}
+    </div>
+     <div class = "form-group">
+        {{ form.email.label }} 
+        <p> Please enter your e-mail address</p>
+        {{ form.email(class="form-control") }}
+    </div>
+     <div class = "form-group">
+        {{ form.location.label }}
+        <p>Please enter your location </p>
+        {{ form.location(class="form-control") }}
+    </div>
+     <div class = "form-group">
+        {{ form.biography.label }} 
+        <p> Tell us something... </p>
+        {{ form.biography(class="form-control", rows="5") }}
+    </div>
+    <div class = "form-group">
+        {{form.file.label}}
+        <p> Upload a photo </p>
+        {{form.file(class="form-control")}}
+    </div>
+    {{ form.csrf_token }}
+    <button type="submit" class="btn btn-primary">Create Profile</button>
+    
+</form>
+
+{% endblock %}

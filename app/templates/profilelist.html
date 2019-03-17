@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block main%}
+
+<div id="container">
+{% for user in user %}
+    
+    	<div class="container-a">
+    			<img src="{{url_for('static',filename='uploads/'+user.photograph)}}" alt="Photo Goes here">
+    			<p> Name: {{user.first_name}} {{ user.last_name}}</p>
+    			<p> Gender: {{ user.gender }}</p>
+    			<p> Location: {{ user.location }}</p>
+    			<p> Joined: {{ user.date_joined }}</p>
+    			<a class="nav-link" href="{{ url_for('profileview',userid=user.id) }}">View Profile</a>
+    	</div>
+{%endfor%}
+</div>
+   
+{%endblock%}
