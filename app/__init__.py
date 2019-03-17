@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+import math
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "this is a super secure key"  # you should mae this more random and unique
