@@ -2,16 +2,21 @@
 
 {% block main %}
 <div id="container">
-		<div class="container-c">
-    			<img src="{{url_for('static',filename='uploads/'+user.photograph)}}" alt="Photo Goes here">
-    			<p> Name: {{user.first_name}} {{ user.last_name}}</p>
-    			<p> Email: {{user.email}} </p>
-    			<p> Gender: {{ user.gender }}</p>
-    			<p> Location: {{ user.location }}</p>
-    			<p> Joined: {{ user.date_joined }}</p>
-		</div>
-		<div class="container-d">
-			<p>Biography: {{user.biography}}</p>
+		<div class="container-a">
+			<div class="information">
+				<div class="info">
+					<img src="{{url_for('static',filename='uploads/'+user.photograph)}}" alt="Photo Goes here">
+				</div>
+				<div class="info">
+					<p> Name: {{user.first_name}} {{ user.last_name}}</p>
+	    			<p> Email: {{user.email}} </p>
+	    			<p> Gender: {{ user.gender }}</p>
+	    			<p> Location: {{ user.location }}</p>
+	    			<p> Joined: {{ user.date_joined }}</p>
+				</div>
+			</div>
+			<h3>About Me:</h3>
+			<p>{{user.biography}}</p>
 			<div class="information">
 				<div class="info">
 					<button class="follow"> Follow </button>
@@ -19,6 +24,8 @@
 				<div class="info">
 					<button class="follow"> Send Message </button>
 				</div>
+			</div>
 
-	</div>
+	    </div>
+</div>
 {% endblock %}

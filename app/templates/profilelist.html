@@ -6,13 +6,26 @@
 {% for user in user %}
     
     	<div class="container-a">
-    			<img src="{{url_for('static',filename='uploads/'+user.photograph)}}" alt="Photo Goes here">
-    			<p> Name: {{user.first_name}} {{ user.last_name}}</p>
-    			<p> Gender: {{ user.gender }}</p>
-    			<p> Location: {{ user.location }}</p>
-    			<p> Joined: {{ user.date_joined }}</p>
-    			<a class="nav-link" href="{{ url_for('profileview',userid=user.id) }}">View Profile</a>
+    	   <div class = "information">
+    	       <div class = "info">
+    	           <img src="{{url_for('static',filename='uploads/'+user.photograph)}}" alt="Photo Goes here">
+    	       </div>
+    	        <div class = "info">
+    	            <p> {{user.first_name}} {{ user.last_name}}</p>
+    			    <p> {{ user.gender }}</p>
+    		    	<p> {{ user.location }}</p>
+    		    	<p> {{ user.date_joined }}</p>
+    	       </div>
+    	        <div class = "info">
+    	           <a class="button" href="{{ url_for('profileview',userid=user.id) }}">View Profile</a>
+    	       </div>
+    	       
+    			
+    			
+    			
     	</div>
+    	   </div>
+    			
 {%endfor%}
 </div>
    
